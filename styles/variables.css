@@ -1,0 +1,91 @@
+/* =====================================================
+   Project Phoenix
+   File: variables.css
+   Version: 0.1.0
+   Purpose: Phoenix Design Tokens
+===================================================== */
+
+:root{
+
+    /* ===== Brand ===== */
+
+    --brand:#FF3F6C;
+    --brand-dark:#E6325E;
+    --brand-light:#FFE5EC;
+
+    /* ===== Background ===== */
+
+    --bg:#F6F8FC;
+    --surface:#FFFFFF;
+    --surface-2:#F8FAFD;
+
+    /* ===== Text ===== */
+
+    --text:#1F2937;
+    --text-light:#6B7280;
+    --text-muted:#9CA3AF;
+
+    /* ===== Status ===== */
+
+    --success:#16A34A;
+    --warning:#F59E0B;
+    --danger:#DC2626;
+    --info:#2563EB;
+
+    /* ===== Dashboard ===== */
+
+    --growth:#16A34A;
+    --drop:#DC2626;
+    --ads:#8B5CF6;
+    --stock:#0EA5E9;
+    --shipment:#F97316;
+    --launch:#14B8A6;
+    --surge:#EC4899;
+
+    /* ===== Border ===== */
+
+    --border:#E5E7EB;
+
+    /* ===== Radius ===== */
+
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:16px;
+    --radius-xl:20px;
+    --radius-pill:999px;
+
+    /* ===== Shadow ===== */
+
+    --shadow-sm:0 1px 3px rgba(0,0,0,.08);
+    --shadow-md:0 4px 12px rgba(0,0,0,.08);
+    --shadow-lg:0 10px 30px rgba(0,0,0,.12);
+
+    /* ===== Spacing ===== */
+
+    --space-xs:4px;
+    --space-sm:8px;
+    --space-md:16px;
+    --space-lg:24px;
+    --space-xl:32px;
+    --space-2xl:48px;
+
+    /* ===== Layout ===== */
+
+    --sidebar-width:270px;
+    --header-height:72px;
+    --footer-height:52px;
+
+    /* ===== Animation ===== */
+
+    --fast:.2s;
+    --normal:.3s;
+    --slow:.5s;
+
+    /* ===== Z Index ===== */
+
+    --z-header:100;
+    --z-sidebar:200;
+    --z-loader:500;
+    --z-modal:1000;
+
+}

@@ -1,0 +1,103 @@
+.splash{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        180deg,
+        #f8fafd,
+        #eef3f8
+    );
+
+}
+
+.splash-card{
+
+    width:520px;
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    width:170px;
+
+    display:block;
+
+    margin:auto;
+
+    margin-bottom:30px;
+
+}
+
+.splash h1{
+
+    margin-bottom:10px;
+
+    font-size:36px;
+
+}
+
+.subtitle{
+
+    color:#6B7280;
+
+    margin-bottom:40px;
+
+}
+
+.progress{
+
+    height:10px;
+
+    background:#ECECEC;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:#FF3F6C;
+
+    transition:.4s;
+
+}
+
+#status{
+
+    margin-top:18px;
+
+    color:#6B7280;
+
+}
+
+small{
+
+    display:block;
+
+    margin-top:35px;
+
+    color:#9CA3AF;
+
+}
