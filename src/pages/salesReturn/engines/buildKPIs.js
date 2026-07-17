@@ -3,31 +3,64 @@
  * Project Phoenix
  * Product : Myntra Analytics
  * Module  : KPI Engine
- * Version : V12.0
+ * Version : V13.0
  * =====================================================
  */
 
+function growth(current, previous) {
+
+    current = Number(current) || 0;
+    previous = Number(previous) || 0;
+
+    if (current === 0 && previous === 0) return 0;
+    if (previous === 0) return 100;
+    if (current === 0) return -100;
+
+    return Number(
+        (((current - previous) / previous) * 100).toFixed(2)
+    );
+}
+
 export function buildKPIs(
 
-    sales=[],
+    sales = [],
 
-    returns=[],
+    returns = [],
 
-    lookup={}
+    lookup = {},
 
-){
+    previousKPIs = null,
 
-    const kpi={
+    compareLabel = "Previous Period"
 
-        sale:{gmv:0,units:0},
+) {
 
-        cancel:{gmv:0,units:0},
+    const kpi = {
 
-        rto:{gmv:0,units:0},
+        sale: {
+            gmv: 0,
+            units: 0
+        },
 
-        cx:{gmv:0,units:0},
+        cancel: {
+            gmv: 0,
+            units: 0
+        },
 
-        net:{gmv:0,units:0}
+        rto: {
+            gmv: 0,
+            units: 0
+        },
+
+        cx: {
+            gmv: 0,
+            units: 0
+        },
+
+        net: {
+            gmv: 0,
+            units: 0
+        }
 
     };
 
@@ -37,33 +70,25 @@ export function buildKPIs(
      * ==========================================
      */
 
-    sales.forEach(row=>{
+    sales.forEach(row => {
 
-        const units=
+        const units =
+            Number(row.qty) || 0;
 
-            Number(row.qty)||0;
+        const gmv =
+            Number(row.final_amount) || 0;
 
-        const gmv=
+        kpi.sale.units += units;
+        kpi.sale.gmv += gmv;
 
-            Number(row.final_amount)||0;
-
-        kpi.sale.units+=units;
-
-        kpi.sale.gmv+=gmv;
-
-        if(
-
+        if (
             String(
-
                 row.order_status
+            ).toUpperCase() === "F"
+        ) {
 
-            ).toUpperCase()==="F"
-
-        ){
-
-            kpi.cancel.units+=units;
-
-            kpi.cancel.gmv+=gmv;
+            kpi.cancel.units += units;
+            kpi.cancel.gmv += gmv;
 
         }
 
@@ -75,57 +100,36 @@ export function buildKPIs(
      * ==========================================
      */
 
-    returns.forEach(row=>{
+    returns.forEach(row => {
 
-        const order=
-
+        const order =
             lookup[
-
                 row.order_line_id
-
             ];
 
-        const gmv=
-
+        const gmv =
             order
+                ? Number(order.final_amount) || 0
+                : 0;
 
-            ?
-
-            Number(
-
-                order.final_amount
-
-            )||0
-
-            :
-
-            0;
-
-        const type=
-
+        const type =
             String(
-
-                row.type||""
-
+                row.type || ""
             )
+                .trim()
+                .toUpperCase();
 
-            .trim()
-
-            .toUpperCase();
-
-        if(type==="RTO"){
+        if (type === "RTO") {
 
             kpi.rto.units++;
-
-            kpi.rto.gmv+=gmv;
+            kpi.rto.gmv += gmv;
 
         }
 
-        else if(type==="RETURN"){
+        else if (type === "RETURN") {
 
             kpi.cx.units++;
-
-            kpi.cx.gmv+=gmv;
+            kpi.cx.gmv += gmv;
 
         }
 
@@ -137,37 +141,48 @@ export function buildKPIs(
      * ==========================================
      */
 
-    kpi.net.units=
-
+    kpi.net.units =
         kpi.sale.units
+        - kpi.cancel.units
+        - kpi.rto.units
+        - kpi.cx.units;
 
-        -
-
-        kpi.cancel.units
-
-        -
-
-        kpi.rto.units
-
-        -
-
-        kpi.cx.units;
-
-    kpi.net.gmv=
-
+    kpi.net.gmv =
         kpi.sale.gmv
+        - kpi.cancel.gmv
+        - kpi.rto.gmv
+        - kpi.cx.gmv;
 
-        -
+    /**
+     * ==========================================
+     * Comparison
+     * ==========================================
+     */
 
-        kpi.cancel.gmv
+    Object.keys(kpi).forEach(key => {
 
-        -
+        const previous =
+            previousKPIs?.[key] || {
+                gmv: 0,
+                units: 0
+            };
 
-        kpi.rto.gmv
+        kpi[key].gmvGrowth =
+            growth(
+                kpi[key].gmv,
+                previous.gmv
+            );
 
-        -
+        kpi[key].unitGrowth =
+            growth(
+                kpi[key].units,
+                previous.units
+            );
 
-        kpi.cx.gmv;
+        kpi[key].compareLabel =
+            compareLabel;
+
+    });
 
     return kpi;
 
