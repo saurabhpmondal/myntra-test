@@ -1,0 +1,450 @@
+/**
+ * =====================================================
+ * Project Phoenix
+ * Product : Myntra Analytics
+ * Module  : New Launch Intelligence
+ * Version : V1.0
+ * =====================================================
+ */
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.new-launch-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.di-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:24px;
+
+    flex-wrap:wrap;
+
+}
+
+.di-header-left h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.di-header-left p{
+
+    margin-top:8px;
+
+    color:#64748B;
+
+    font-size:15px;
+
+}
+
+.di-header-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    align-items:flex-end;
+
+}
+
+.launch-filter-row{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+
+}
+
+.launch-header-info{
+
+    display:flex;
+
+    gap:20px;
+
+    font-size:13px;
+
+    color:#64748B;
+
+    flex-wrap:wrap;
+
+}
+
+.launch-success{
+
+    font-weight:600;
+
+    color:#0F766E;
+
+}
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.di-select,
+
+.di-search{
+
+    height:40px;
+
+    padding:0 14px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:10px;
+
+    background:#ffffff;
+
+    font-size:14px;
+
+    color:#111827;
+
+    outline:none;
+
+}
+
+.di-search{
+
+    width:220px;
+
+}
+
+/* =====================================================
+   KPI GRID
+===================================================== */
+
+.kpi-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+
+            auto-fit,
+
+            minmax(220px,1fr)
+
+        );
+
+    gap:20px;
+
+}
+
+.kpi-card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    box-shadow:
+
+        0 2px 12px rgba(15,23,42,.08);
+
+    transition:.2s;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.kpi-title{
+
+    font-size:13px;
+
+    color:#64748B;
+
+    margin-bottom:12px;
+
+}
+
+.kpi-value{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+/* =====================================================
+   INSIGHTS
+===================================================== */
+
+.insight-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+
+            auto-fit,
+
+            minmax(280px,1fr)
+
+        );
+
+    gap:20px;
+
+}
+
+.insight-card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:
+
+        0 2px 12px rgba(15,23,42,.08);
+
+}
+
+.insight-title{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#111827;
+
+}
+
+.insight-text{
+
+    margin-top:8px;
+
+    color:#64748B;
+
+    line-height:1.6;
+
+}
+
+/* =====================================================
+   TABLES
+===================================================== */
+
+.table-card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:
+
+        0 2px 12px rgba(15,23,42,.08);
+
+}
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.table-header h3{
+
+    margin:0;
+
+    font-size:18px;
+
+    color:#111827;
+
+}
+
+.table-header span{
+
+    color:#64748B;
+
+    font-size:13px;
+
+}
+
+.table-responsive{
+
+    overflow:auto;
+
+}
+
+.phoenix-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.phoenix-table thead th{
+
+    background:#F8FAFC;
+
+    padding:12px;
+
+    text-align:center;
+
+    font-size:13px;
+
+    color:#475569;
+
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+.phoenix-table tbody td{
+
+    padding:12px;
+
+    text-align:center;
+
+    border-bottom:1px solid #F1F5F9;
+
+}
+
+.phoenix-table tbody tr:nth-child(even){
+
+    background:#FAFAFA;
+
+}
+
+.phoenix-table tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+/* =====================================================
+   STATUS BADGES
+===================================================== */
+
+.badge-success{
+
+    color:#047857;
+
+    font-weight:600;
+
+}
+
+.badge-primary{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+}
+
+.badge-warning{
+
+    color:#D97706;
+
+    font-weight:600;
+
+}
+
+.badge-danger{
+
+    color:#DC2626;
+
+    font-weight:600;
+
+}
+
+.badge-neutral{
+
+    color:#64748B;
+
+    font-weight:600;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+    .di-header{
+
+        flex-direction:column;
+
+    }
+
+    .di-header-right{
+
+        align-items:stretch;
+
+        width:100%;
+
+    }
+
+    .launch-filter-row{
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .kpi-grid,
+
+    .insight-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .di-search{
+
+        width:100%;
+
+    }
+
+}
