@@ -3,7 +3,7 @@
  * Project Phoenix
  * Product : Myntra Analytics
  * Module  : KPI Renderer
- * Version : V12.3
+ * Version : V13.5
  * =====================================================
  */
 
@@ -27,6 +27,72 @@ function formatAmount(value){
 
 /**
  * =====================================================
+ * Compare Label
+ * =====================================================
+ */
+
+function compareLabel(item){
+
+    return item?.compareLabel ||
+
+        "Previous Period";
+
+}
+
+/**
+ * =====================================================
+ * Growth Value
+ * =====================================================
+ */
+
+function growth(item,key){
+
+    return Number(
+
+        item?.[key] ?? 0
+
+    );
+
+}
+
+/**
+ * =====================================================
+ * Business Growth Color
+ * =====================================================
+ */
+
+function growthType(title,value){
+
+    const negative=[
+
+        "Cancelled",
+
+        "RTO",
+
+        "CX Return"
+
+    ];
+
+    if(negative.includes(title)){
+
+        return value>0
+
+            ? "negative"
+
+            : "positive";
+
+    }
+
+    return value>=0
+
+        ? "positive"
+
+        : "negative";
+
+}
+
+/**
+ * =====================================================
  * Build Amount Card
  * =====================================================
  */
@@ -37,9 +103,7 @@ async function buildAmountCard(
 
     title,
 
-    amount,
-
-    units,
+    item,
 
     icon
 
@@ -53,11 +117,11 @@ async function buildAmountCard(
 
             title,
 
-            value:formatAmount(amount),
+            value:formatAmount(item.gmv),
 
             subtitle:
 
-                Number(units)
+                Number(item.units)
 
                     .toLocaleString("en-IN")
 
@@ -67,9 +131,35 @@ async function buildAmountCard(
 
             icon,
 
-            growth:0,
+            growth:
 
-            compareLabel:"Previous Period"
+                growth(
+
+                    item,
+
+                    "gmvGrowth"
+
+                ),
+
+            compareLabel:
+
+                compareLabel(item),
+
+            growthType:
+
+                growthType(
+
+                    title,
+
+                    growth(
+
+                        item,
+
+                        "gmvGrowth"
+
+                    )
+
+                )
 
         }
 
@@ -89,7 +179,7 @@ async function buildUnitCard(
 
     title,
 
-    units,
+    item,
 
     icon
 
@@ -105,7 +195,7 @@ async function buildUnitCard(
 
             value:
 
-                Number(units)
+                Number(item.units)
 
                     .toLocaleString("en-IN"),
 
@@ -113,9 +203,35 @@ async function buildUnitCard(
 
             icon,
 
-            growth:0,
+            growth:
 
-            compareLabel:"Previous Period"
+                growth(
+
+                    item,
+
+                    "unitGrowth"
+
+                ),
+
+            compareLabel:
+
+                compareLabel(item),
+
+            growthType:
+
+                growthType(
+
+                    title,
+
+                    growth(
+
+                        item,
+
+                        "unitGrowth"
+
+                    )
+
+                )
 
         }
 
@@ -209,49 +325,49 @@ export async function renderKPIs(
 
 <div class="sales-return-kpi-section">
 
-    <div class="sales-return-kpi-heading">
+<div class="sales-return-kpi-heading">
 
-        GMV Performance
+GMV Performance
 
-    </div>
+</div>
 
-    <div class="sales-return-kpi-grid">
+<div class="sales-return-kpi-grid">
 
-        <div id="srSale"></div>
+<div id="srSale"></div>
 
-        <div id="srCancel"></div>
+<div id="srCancel"></div>
 
-        <div id="srRTO"></div>
+<div id="srRTO"></div>
 
-        <div id="srCX"></div>
+<div id="srCX"></div>
 
-        <div id="srNet"></div>
+<div id="srNet"></div>
 
-    </div>
+</div>
 
 </div>
 
 <div class="sales-return-kpi-section">
 
-    <div class="sales-return-kpi-heading">
+<div class="sales-return-kpi-heading">
 
-        Unit Performance
+Unit Performance
 
-    </div>
+</div>
 
-    <div class="sales-return-kpi-grid">
+<div class="sales-return-kpi-grid">
 
-        <div id="srSaleUnits"></div>
+<div id="srSaleUnits"></div>
 
-        <div id="srCancelUnits"></div>
+<div id="srCancelUnits"></div>
 
-        <div id="srRTOUnits"></div>
+<div id="srRTOUnits"></div>
 
-        <div id="srCXUnits"></div>
+<div id="srCXUnits"></div>
 
-        <div id="srNetUnits"></div>
+<div id="srNetUnits"></div>
 
-    </div>
+</div>
 
 </div>
 
@@ -269,9 +385,7 @@ export async function renderKPIs(
 
         "Sale",
 
-        dashboard.sale.gmv,
-
-        dashboard.sale.units,
+        dashboard.sale,
 
         "badge-indian-rupee"
 
@@ -283,9 +397,7 @@ export async function renderKPIs(
 
         "Cancelled",
 
-        dashboard.cancel.gmv,
-
-        dashboard.cancel.units,
+        dashboard.cancel,
 
         "circle-x"
 
@@ -297,9 +409,7 @@ export async function renderKPIs(
 
         "RTO",
 
-        dashboard.rto.gmv,
-
-        dashboard.rto.units,
+        dashboard.rto,
 
         "rotate-ccw"
 
@@ -311,9 +421,7 @@ export async function renderKPIs(
 
         "CX Return",
 
-        dashboard.cx.gmv,
-
-        dashboard.cx.units,
+        dashboard.cx,
 
         "package-x"
 
@@ -325,9 +433,7 @@ export async function renderKPIs(
 
         "Net",
 
-        dashboard.net.gmv,
-
-        dashboard.net.units,
+        dashboard.net,
 
         "wallet"
 
@@ -345,7 +451,7 @@ export async function renderKPIs(
 
         "Sale",
 
-        dashboard.sale.units,
+        dashboard.sale,
 
         "package"
 
@@ -357,7 +463,7 @@ export async function renderKPIs(
 
         "Cancelled",
 
-        dashboard.cancel.units,
+        dashboard.cancel,
 
         "circle-x"
 
@@ -369,7 +475,7 @@ export async function renderKPIs(
 
         "RTO",
 
-        dashboard.rto.units,
+        dashboard.rto,
 
         "rotate-ccw"
 
@@ -381,7 +487,7 @@ export async function renderKPIs(
 
         "CX Return",
 
-        dashboard.cx.units,
+        dashboard.cx,
 
         "package-x"
 
@@ -393,7 +499,111 @@ export async function renderKPIs(
 
         "Net",
 
-        dashboard.net.units,
+        dashboard.net,
+
+        "wallet"
+
+    );
+
+}
+
+    await buildAmountCard(
+
+        "srRTO",
+
+        "RTO",
+
+        dashboard.rto,
+
+        "rotate-ccw"
+
+    );
+
+    await buildAmountCard(
+
+        "srCX",
+
+        "CX Return",
+
+        dashboard.cx,
+
+        "package-x"
+
+    );
+
+    await buildAmountCard(
+
+        "srNet",
+
+        "Net",
+
+        dashboard.net,
+
+        "wallet"
+
+    );
+
+    /**
+     * ==========================================
+     * Unit Cards
+     * ==========================================
+     */
+
+    await buildUnitCard(
+
+        "srSaleUnits",
+
+        "Sale",
+
+        dashboard.sale,
+
+        "package"
+
+    );
+
+    await buildUnitCard(
+
+        "srCancelUnits",
+
+        "Cancelled",
+
+        dashboard.cancel,
+
+        "circle-x"
+
+    );
+
+    await buildUnitCard(
+
+        "srRTOUnits",
+
+        "RTO",
+
+        dashboard.rto,
+
+        "rotate-ccw"
+
+    );
+
+    await buildUnitCard(
+
+        "srCXUnits",
+
+        "CX Return",
+
+        dashboard.cx,
+
+        "package-x"
+
+    );
+
+    await buildUnitCard(
+
+        "srNetUnits",
+
+        "Net",
+
+        dashboard.net,
 
         "wallet"
 
