@@ -1,0 +1,132 @@
+/**
+ * =====================================================
+ * Project Phoenix
+ * Product : Myntra Analytics
+ * Module  : Sticky Search
+ * Version : V1.0
+ * =====================================================
+ */
+
+.sticky-search-container{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    padding:12px 0;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(255,255,255,.88);
+
+}
+
+.sticky-search-card{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:14px;
+
+    align-items:center;
+
+    background:#FFFFFF;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:18px;
+
+    padding:14px 18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.25s;
+
+}
+
+.sticky-search-card:hover{
+
+    box-shadow:0 14px 35px rgba(0,0,0,.12);
+
+}
+
+#stickyStyleSearch{
+
+    flex:1;
+
+    height:52px;
+
+    border:1px solid #D1D5DB;
+
+    border-radius:12px;
+
+    padding:0 18px;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+#stickyStyleSearch:focus{
+
+    border-color:#FF3F6C;
+
+    box-shadow:0 0 0 4px rgba(255,63,108,.12);
+
+}
+
+#stickyDeepDiveButton{
+
+    height:52px;
+
+    padding:0 28px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#FF3F6C;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#stickyDeepDiveButton:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 22px rgba(255,63,108,.28);
+
+}
+
+@media(max-width:768px){
+
+    .sticky-search-card{
+
+        flex-direction:column;
+
+    }
+
+    #stickyStyleSearch,
+
+    #stickyDeepDiveButton{
+
+        width:100%;
+
+    }
+
+}

@@ -1,0 +1,78 @@
+.filterbar{
+
+    min-height:68px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 24px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #E5E7EB;
+
+    flex-wrap:wrap;
+
+}
+
+.filterbar select,
+.filterbar input{
+
+    height:40px;
+
+    padding:0 14px;
+
+    border:1px solid #D1D5DB;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    background:#fff;
+
+}
+
+.filterbar input{
+
+    width:260px;
+
+}
+
+.filterbar button{
+
+    height:40px;
+
+    padding:0 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-weight:600;
+
+}
+
+#btnReset{
+
+    background:#F3F4F6;
+
+}
+
+#btnRefresh{
+
+    background:#FF3F6C;
+
+    color:#fff;
+
+}

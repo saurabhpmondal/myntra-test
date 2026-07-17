@@ -1,0 +1,56 @@
+/**
+ * =====================================================
+ * Project Phoenix
+ * Product : Myntra Analytics
+ * Module  : Shipment Report
+ * Version : V5.0
+ * =====================================================
+ */
+
+.shipment-report-card{
+
+    min-height:500px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.shipment-empty{
+
+    text-align:center;
+
+    max-width:500px;
+
+}
+
+.shipment-empty-icon{
+
+    font-size:64px;
+
+    margin-bottom:20px;
+
+}
+
+.shipment-empty h2{
+
+    margin-bottom:12px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.shipment-empty p{
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}

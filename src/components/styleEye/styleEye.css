@@ -1,0 +1,25 @@
+.style-eye{
+
+    width:100%;
+
+    max-width:100%;
+
+    min-width:0;
+
+    overflow-x:hidden;
+
+}
+
+.style-eye .dashboard-section{
+
+    width:100%;
+
+    max-width:100%;
+
+    min-width:0;
+
+    overflow:hidden;
+
+    margin-bottom:18px;
+
+}

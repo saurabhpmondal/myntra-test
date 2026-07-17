@@ -1,0 +1,107 @@
+.app-header{
+
+    height:72px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #E5E7EB;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 28px;
+
+}
+
+.page-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.page-subtitle{
+
+    margin-top:4px;
+
+    color:#64748B;
+
+    font-size:13px;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.header-btn{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    height:38px;
+    padding:0 14px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#FF3F6C;
+    color:#ffffff;
+
+    cursor:pointer;
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:all .2s ease;
+}
+
+.header-btn i{
+    width:16px;
+    height:16px;
+}
+
+.header-btn:hover{
+    background:#E6325F;
+    transform:translateY(-1px);
+}
+
+.header-btn:hover{
+
+    transform:translateY(-1px);
+
+    box-shadow:0 6px 16px rgba(255,63,108,.25);
+
+}
+
+.header-avatar{
+
+    width:38px;
+height:38px;
+font-size:13px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#111827;
+
+    color:#fff;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}

@@ -1,0 +1,267 @@
+/* =====================================================
+   Project Phoenix
+   Product : Myntra Analytics
+   Module  : Premium Style Selector
+   Version : V2.1
+===================================================== */
+
+.style-selector-wrapper{
+
+    max-width:1500px;
+    margin:40px auto;
+    padding:0 20px;
+
+}
+
+.style-selector-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:28px;
+    padding:0 6px;
+
+}
+
+.style-selector-header h2{
+
+    margin:0;
+    font-size:34px;
+    font-weight:800;
+    color:#111827;
+
+}
+
+.style-selector-header p{
+
+    margin-top:8px;
+    color:#6B7280;
+    font-size:15px;
+
+}
+
+.selector-count{
+
+    min-width:120px;
+    height:46px;
+    padding:0 22px;
+    border:1px solid #E5E7EB;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#FFFFFF;
+    font-size:15px;
+    font-weight:700;
+    color:#374151;
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+
+}
+
+.style-selector-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(520px,1fr));
+    gap:28px;
+
+}
+
+.style-selector-card{
+
+    background:linear-gradient(180deg,#FFFFFF,#FCFCFD);
+    border:1px solid #E8ECF2;
+    border-radius:22px;
+    overflow:hidden;
+    transition:.30s;
+    box-shadow:0 12px 35px rgba(15,23,42,.06);
+
+}
+
+.style-selector-card:hover{
+
+    transform:translateY(-6px);
+    border-color:#FF3F6C;
+    box-shadow:0 18px 45px rgba(255,63,108,.18);
+
+}
+
+.style-selector-top{
+
+    display:flex;
+    gap:22px;
+    padding:24px;
+
+}
+
+.style-selector-image{
+
+    width:120px;
+    height:160px;
+    border-radius:16px;
+    background:#F3F4F6;
+    border:1px dashed #D1D5DB;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#9CA3AF;
+    font-size:14px;
+    flex-shrink:0;
+
+}
+
+.style-selector-content{
+
+    flex:1;
+
+}
+
+.style-selector-row{
+
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-size:15px;
+
+}
+
+.style-selector-label{
+
+    color:#6B7280;
+
+}
+
+.style-selector-value{
+
+    font-weight:600;
+    color:#111827;
+
+}
+
+.style-selector-brand{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+
+}
+
+.style-selector-brand h3{
+
+    margin:0;
+    font-size:32px;
+    font-weight:800;
+    color:#111827;
+
+}
+
+.style-selector-status{
+
+    background:#DCFCE7;
+    color:#16A34A;
+    padding:7px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+
+}
+
+.style-selector-divider{
+
+    height:1px;
+    background:#EEF2F7;
+    margin:0 24px;
+
+}
+
+.style-selector-kpis{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    padding:22px 24px;
+
+}
+
+.selector-kpi{
+
+    border:1px solid #E5E7EB;
+    border-radius:14px;
+    background:#FFFFFF;
+    text-align:center;
+    padding:14px;
+
+}
+
+.selector-kpi-label{
+
+    font-size:13px;
+    color:#6B7280;
+    margin-bottom:8px;
+
+}
+
+.selector-kpi-value{
+
+    font-size:18px;
+    font-weight:700;
+    color:#111827;
+
+}
+
+.style-selector-footer{
+
+    padding:0 24px 24px;
+
+}
+
+.style-selector-button{
+
+    width:100%;
+    height:54px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(90deg,#FF3F6C,#FF1F5A);
+    color:#FFFFFF;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+
+}
+
+.style-selector-button:hover{
+
+    transform:scale(1.02);
+    box-shadow:0 10px 24px rgba(255,63,108,.30);
+
+}
+
+@media(max-width:900px){
+
+    .style-selector-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .style-selector-top{
+
+        flex-direction:column;
+
+    }
+
+    .style-selector-image{
+
+        width:100%;
+        height:220px;
+
+    }
+
+    .style-selector-kpis{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}

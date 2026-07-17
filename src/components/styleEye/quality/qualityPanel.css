@@ -1,0 +1,478 @@
+/**
+ * =====================================================
+ * Project Phoenix
+ * Product : Myntra Analytics
+ * Module  : Quality Intelligence
+ * Version : V1.0
+ * =====================================================
+ */
+
+.quality-panel{
+
+    background:#FFFFFF;
+
+    border:1px solid #ECECEC;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    margin-top:24px;
+
+    box-shadow:0 10px 35px rgba(17,24,39,.06);
+
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.quality-header{
+
+    margin-bottom:28px;
+
+}
+
+.quality-header h2{
+
+    margin:0;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.quality-header p{
+
+    margin-top:8px;
+
+    color:#6B7280;
+
+    font-size:15px;
+
+}
+
+/* ==========================================
+   Snapshot
+========================================== */
+
+.quality-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-bottom:28px;
+
+}
+
+.quality-card{
+
+    background:#FFFFFF;
+
+    border:1px solid #ECECEC;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.25s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.quality-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#FF3F6C;
+
+    box-shadow:0 12px 30px rgba(255,63,108,.15);
+
+}
+
+.quality-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:#FF3F6C;
+
+}
+
+.quality-title{
+
+    font-size:14px;
+
+    color:#6B7280;
+
+    margin-bottom:12px;
+
+}
+
+.quality-value{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#111827;
+
+}
+
+.quality-subtitle{
+
+    margin-top:8px;
+
+    color:#9CA3AF;
+
+    font-size:13px;
+
+}
+
+/* ==========================================
+   Analysis
+========================================== */
+
+.quality-analysis{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:24px;
+
+    margin-bottom:28px;
+
+}
+
+.analysis-card{
+
+    background:#FFFFFF;
+
+    border:1px solid #ECECEC;
+
+    border-radius:20px;
+
+    padding:24px;
+
+}
+
+.analysis-card h3{
+
+    margin:0 0 20px;
+
+    font-size:22px;
+
+    color:#111827;
+
+}
+
+/* ==========================================
+   Return Reason Bars
+========================================== */
+
+.reason-row{
+
+    margin-bottom:18px;
+
+}
+
+.reason-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+}
+
+.reason-bar{
+
+    width:100%;
+
+    height:10px;
+
+    background:#F3F4F6;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.reason-fill{
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:#FF3F6C;
+
+}
+
+/* ==========================================
+   Risk Chips
+========================================== */
+
+.risk-chip{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    margin-bottom:12px;
+
+    border:1px solid #ECECEC;
+
+}
+
+.risk-good{
+
+    background:#ECFDF5;
+
+    color:#047857;
+
+}
+
+.risk-warning{
+
+    background:#FEF3C7;
+
+    color:#92400E;
+
+}
+
+.risk-danger{
+
+    background:#FEE2E2;
+
+    color:#B91C1C;
+
+}
+
+/* ==========================================
+   Health
+========================================== */
+
+.quality-health{
+
+    background:#FFFFFF;
+
+    border:1px solid #ECECEC;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    margin-bottom:28px;
+
+}
+
+.quality-health-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.quality-health-status{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.quality-health-description{
+
+    color:#6B7280;
+
+    line-height:28px;
+
+}
+
+/* ==========================================
+   Executive Summary
+========================================== */
+
+.quality-summary{
+
+    background:#F9FAFB;
+
+    border-left:5px solid #FF3F6C;
+
+    border-radius:16px;
+
+    padding:24px;
+
+    margin-bottom:28px;
+
+}
+
+.quality-summary h3{
+
+    margin:0 0 18px;
+
+    font-size:22px;
+
+}
+
+.quality-summary ul{
+
+    margin:0;
+
+    padding-left:20px;
+
+}
+
+.quality-summary li{
+
+    margin-bottom:12px;
+
+    line-height:26px;
+
+}
+
+/* ==========================================
+   Business Action
+========================================== */
+
+.quality-action{
+
+    border-radius:22px;
+
+    padding:30px;
+
+    color:#FFFFFF;
+
+}
+
+.quality-action.success{
+
+    background:linear-gradient(135deg,#10B981,#059669);
+
+}
+
+.quality-action.warning{
+
+    background:linear-gradient(135deg,#F59E0B,#D97706);
+
+}
+
+.quality-action.danger{
+
+    background:linear-gradient(135deg,#EF4444,#DC2626);
+
+}
+
+.quality-action-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+.quality-action-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.quality-priority{
+
+    background:rgba(255,255,255,.18);
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.quality-action-description{
+
+    margin-top:20px;
+
+    font-size:16px;
+
+    line-height:30px;
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:1400px){
+
+    .quality-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .quality-analysis{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .quality-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

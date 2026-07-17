@@ -1,0 +1,224 @@
+/**
+ * =====================================================
+ * Project Phoenix
+ * Product : Myntra Analytics
+ * Module  : Shipment Controls
+ * Version : V5.1
+ * =====================================================
+ */
+
+.shipment-toolbar{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.shipment-filters{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+}
+
+.shipment-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    min-width:180px;
+
+}
+
+.shipment-field label{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#6b7280;
+
+}
+
+.shipment-field select{
+
+    height:42px;
+
+    padding:0 12px;
+
+    border:1px solid #dcdfe6;
+
+    border-radius:8px;
+
+    background:#ffffff;
+
+    font-size:14px;
+
+    outline:none;
+
+}
+
+.shipment-field select:focus{
+
+    border-color:#ff3b7f;
+
+}
+
+.shipment-button{
+
+    margin-top:auto;
+
+}
+
+.shipment-button button{
+
+    height:42px;
+
+    min-width:180px;
+
+    padding:0 24px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#ff3b7f;
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.shipment-button button:hover{
+
+    background:#e83072;
+
+}
+
+.shipment-button button:disabled{
+
+    background:#bfbfbf;
+
+    cursor:not-allowed;
+
+}
+
+.shipment-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-top:20px;
+
+    padding-top:20px;
+
+    border-top:1px solid #ececec;
+
+}
+
+#shipmentSearch{
+
+    flex:1;
+
+    height:42px;
+
+    padding:0 14px;
+
+    border:1px solid #dcdfe6;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    outline:none;
+
+}
+
+#shipmentSearch:focus{
+
+    border-color:#ff3b7f;
+
+}
+
+#exportShipment{
+
+    height:42px;
+
+    padding:0 24px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#16a34a;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+#exportShipment:hover{
+
+    background:#15803d;
+
+}
+
+@media(max-width:768px){
+
+    .shipment-filters{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .shipment-field,
+
+    .shipment-button,
+
+    .shipment-button button{
+
+        width:100%;
+
+    }
+
+    .shipment-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    #exportShipment{
+
+        width:100%;
+
+    }
+
+}
