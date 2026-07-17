@@ -1,0 +1,47 @@
+/**
+ * =====================================================
+ * Phoenix Export Button
+ * =====================================================
+ */
+
+.phoenix-export-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+.phoenix-export-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-1px);
+
+}
+
+.phoenix-export-btn:active{
+
+    transform:translateY(0);
+
+}

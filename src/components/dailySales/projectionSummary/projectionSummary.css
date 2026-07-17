@@ -1,0 +1,78 @@
+/**
+ * =====================================================
+ * Project Phoenix
+ * Product : Myntra Analytics
+ * Module  : Projection Summary
+ * Version : V1.0
+ * =====================================================
+ */
+
+.projection-head th{
+
+    background:#F8FAFC;
+
+    color:#334155;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-align:center;
+
+}
+
+.projection-body td{
+
+    text-align:right;
+
+}
+
+.projection-body td:first-child{
+
+    text-align:center;
+
+    font-weight:700;
+
+}
+
+.projection-body tr:nth-child(odd){
+
+    background:#FFFFFF;
+
+}
+
+.projection-body tr:nth-child(even){
+
+    background:#F8FAFC;
+
+}
+
+.projection-body tr:hover{
+
+    background:#EEF6FF;
+
+}
+
+.projection-body tr:last-child{
+
+    background:#FFF7ED;
+
+    font-weight:700;
+
+}
+
+.projection-positive{
+
+    color:#16A34A;
+
+    font-weight:700;
+
+}
+
+.projection-negative{
+
+    color:#DC2626;
+
+    font-weight:700;
+
+}

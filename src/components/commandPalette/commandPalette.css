@@ -1,0 +1,199 @@
+/* =====================================================
+   Project Phoenix
+   Command Palette
+   ===================================================== */
+
+.command-palette{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+}
+
+.command-palette.hidden{
+
+    display:none;
+
+}
+
+/* ================= Backdrop ================= */
+
+.cp-backdrop{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(15,23,42,.45);
+
+    backdrop-filter:blur(10px);
+
+}
+
+/* ================= Modal ================= */
+
+.cp-modal{
+
+    width:680px;
+
+    max-width:92vw;
+
+    margin:80px auto;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 60px rgba(15,23,42,.25);
+
+    animation:cpOpen .18s ease;
+
+}
+
+/* ================= Search ================= */
+
+.cp-search{
+
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:0 22px;
+
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+.cp-search i{
+
+    width:20px;
+
+    height:20px;
+
+    color:#64748B;
+
+}
+
+.cp-search input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    font-size:16px;
+
+    color:#111827;
+
+}
+
+/* ================= Results ================= */
+
+.cp-results{
+
+    max-height:420px;
+
+    overflow:auto;
+
+    padding:12px;
+
+}
+
+.cp-group{
+
+    margin-bottom:18px;
+
+}
+
+.cp-group-title{
+
+    padding:8px 12px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    color:#94A3B8;
+
+}
+
+.cp-item{
+
+    width:100%;
+
+    height:46px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    color:#334155;
+
+    transition:.15s;
+
+}
+
+.cp-item:hover{
+
+    background:#F8FAFC;
+
+}
+
+.cp-item i{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+/* ================= Animation ================= */
+
+@keyframes cpOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

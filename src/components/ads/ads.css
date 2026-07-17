@@ -1,0 +1,170 @@
+/**
+=====================================================
+Project Phoenix
+Product : Myntra Analytics
+Module  : Ads Dashboard
+Version : V1.0
+=====================================================
+*/
+
+.ads-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    width:100%;
+
+}
+
+.ads-kpis{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:16px;
+
+}
+
+.ads-chart{
+
+    width:100%;
+
+    min-height:380px;
+
+}
+
+.ads-report{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.ads-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:16px;
+
+    flex-wrap:wrap;
+
+}
+
+.ads-search{
+
+    width:320px;
+
+    max-width:100%;
+
+}
+
+.ads-search input{
+
+    width:100%;
+
+}
+
+.ads-loading{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:300px;
+
+    font-size:14px;
+
+    color:var(--text-secondary);
+
+}
+
+.ads-empty{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:250px;
+
+    border:1px dashed var(--border-color);
+
+    border-radius:12px;
+
+    color:var(--text-secondary);
+
+    background:var(--surface-secondary);
+
+}
+
+.ads-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.ads-section+.ads-section{
+
+    margin-top:8px;
+
+}
+
+@media(max-width:992px){
+
+    .ads-kpis{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .ads-kpis{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .ads-toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .ads-search{
+
+        width:100%;
+
+    }
+
+    .ads-chart{
+
+        min-height:300px;
+
+    }
+
+}

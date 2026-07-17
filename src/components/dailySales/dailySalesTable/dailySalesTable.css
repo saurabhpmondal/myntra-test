@@ -1,0 +1,186 @@
+/**
+ * =====================================================
+ * Project Phoenix
+ * Product : Myntra Analytics
+ * Module  : Daily Sales Table
+ * Version : V1.0
+ * =====================================================
+ */
+
+.dashboard-card{
+
+    background:#FFFFFF;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:16px;
+
+    padding:24px;
+
+    box-shadow:0 4px 12px rgba(15,23,42,.05);
+
+}
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.card-header h2{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.card-header p{
+
+    margin-top:6px;
+
+    font-size:14px;
+
+    color:#64748B;
+
+}
+
+.table-wrapper{
+
+    overflow:auto;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:12px;
+
+}
+
+.phoenix-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    white-space:nowrap;
+
+    min-width:max-content;
+
+}
+
+.phoenix-table thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:20;
+
+}
+
+.phoenix-table thead tr:first-child th{
+
+    background:#F3F4F6;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    color:#374151;
+
+}
+
+.phoenix-table thead tr:nth-child(2) th{
+
+    background:#F9FAFB;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#475569;
+
+}
+
+.phoenix-table th{
+
+    border:1px solid #E5E7EB;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+.phoenix-table td{
+
+    border:1px solid #F1F5F9;
+
+    padding:10px 12px;
+
+    font-size:14px;
+
+    text-align:right;
+
+}
+
+.phoenix-table td:first-child{
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+.phoenix-table tbody tr:nth-child(even){
+
+    background:#FCFCFD;
+
+}
+
+.phoenix-table tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+.phoenix-table tbody tr:last-child{
+
+    background:#EEF6FF;
+
+    font-weight:700;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+@media(max-width:1200px){
+
+    .dashboard-card{
+
+        padding:18px;
+
+    }
+
+}
